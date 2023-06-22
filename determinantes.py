@@ -29,9 +29,17 @@ def calc_determinante(matriz: list[list[int]]) -> int:
     # pode assumir qualquer valor tal que 0 <= COLUNA_ESCOLHIDA < N
     COLUNA_ESCOLHIDA = randint(0, len(matriz) - 1)
 
+    # LINHA_ESCOLHIDA = randint(0, len(matriz) - 1)
+    # pode-se calcular o determinante por linha, desde que, da mesma forma
+    # 0 <= LINHA_ESCOLHIDA < N
+
     determinante = 0
     for indice in range(len(matriz)):
         determinante += matriz[indice][COLUNA_ESCOLHIDA] * calc_cofator(matriz, indice, COLUNA_ESCOLHIDA)
+
+        # caso esteja calculando por linha
+        # determinante += matriz[LINHA_ESCOLHIDA][indice] * calc_cofator(matriz, LINHA_ESCOLHIDA, indice)
+
 
     return determinante
 
